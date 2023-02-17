@@ -1,0 +1,55 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q4)}
+
+Assuming homogeneity and applying row reduction, we see the following steps:
+
+\begin{gather*}
+    \begin{pmatrix}
+        1 & 2 & 5 & \vert & 0\\
+        -1 & 0 & 5 & \vert & 0\\
+        0 & 1 & 5 & \vert & 0\\
+        1 & 2 & 5 & \vert & 0
+    \end{pmatrix}\\
+    \downarrow\\
+    \begin{pmatrix}
+        1 & 2 & 5 & \vert & 0\\
+        0 & 2 & 10 & \vert & 0\\
+        0 & 1 & 5 & \vert & 0\\
+        1 & 2 & 5 & \vert & 0
+    \end{pmatrix}\\
+    \downarrow\\
+    \begin{pmatrix}
+        1 & 2 & 5 & \vert & 0\\
+        1 & 2 & 5 & \vert & 0\\
+        0 & 2 & 10 & \vert & 0\\
+        0 & 1 & 5 & \vert & 0
+    \end{pmatrix}\\
+    \downarrow\\
+    \begin{pmatrix}
+        1 & 2 & 5 & \vert & 0\\
+        0 & 0 & 0 & \vert & 0\\
+        0 & 2 & 10 & \vert & 0\\
+        0 & 1 & 5 & \vert & 0
+    \end{pmatrix}\\
+    \downarrow\\
+    \begin{pmatrix}
+        1 & 2 & -5 & \vert & 0\\
+        0 & 1 & 5 & \vert & 0\\
+        0 & 0 & 0 & \vert & 0\\
+        0 & 0 & 0 & \vert & 0
+    \end{pmatrix}\\
+\end{gather*}
+
+The final set of equations forms a set that is not linearly independent.
+
+\end{document}

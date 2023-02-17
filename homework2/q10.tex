@@ -1,0 +1,66 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q10)}
+
+\textit{(a)}
+
+\begin{proof}
+    We intend to show that for any two vectors $w_1 \in W_1$ and
+    $w_2 \in W_2$,
+    $\exists W_2 \sse V \st w_1 + w_2 \in V$ and
+    $W_1 \cap W_2 = \{0\}$.
+
+    Let $B$ be the basis of $V$ and $B_1$ the basis of $W_1$,
+    and $n = \dim V$.
+
+    Then $B = \{v_1, v_2, \ldots v_n\}$
+    and $B_1 = \{u_1, u_2, \ldots u_k\}$. Then by the Replacement Theorem,
+    we have
+
+    \[
+        B = \{u_1, u_2, \ldots u_k, v_{k + 1}, v_{k + 2}, \ldots v_n\}
+    \]
+
+    Let $B_2 = B \setminus B_1 = \{v_{k + 1}, \ldots v_n\}$.
+    Since $B$ is a basis, all its constituent vectors are linearly independent
+    and thus $B_2 \sse B \implies B_2$ is linearly independent.
+
+    Let $W_2 = \operatorname{span} B_2$. By Theorem 20, $W_2$ is a subspace of $V$.
+
+    Since $B_1 \cap B_2 = \phi$, no vector from $W_1$ can be expressed in
+    terms of vectors from $B_2$, thus the only common element $W_1$ and $W_2$
+    have is $\mathbf{0}$.
+\end{proof}
+
+\textit{(b)}
+Since $B_2 = B \setminus B_1$, $|B_2| = |B| - |B_1|$ and thus
+$\dim W_2 = \dim V - \dim W_1$.
+
+\textit{(c)} Yes.
+
+\begin{proof}
+    Assume $\exists W_3 \st V = W_1 \oplus W_2 = W_1 \oplus W_3$.
+    We aim to show that $W_2 = W_3$.
+
+    We then have
+    \begin{gather*}
+        V = \{v \in V = w_1 + w_2 \st w_1 \in W_1 \text{ and } w_2 \in W_2\}\\
+        V = \{v \in V = w_1 + w_3 \st w_1 \in W_1 \text{ and } w_3 \in W_3\}
+    \end{gather*}
+
+    Then $\forall v \in V, v - w_1 = w_2$ and $v - w_2 = w_3$.
+
+    Since every vector in $W_2$ has a corresponding vector in $W_3$
+    and vice-versa, by mutual subset inclusion, $W_2 = W_3$.
+\end{proof}
+
+\end{document}

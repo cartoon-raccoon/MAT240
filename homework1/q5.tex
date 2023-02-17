@@ -1,0 +1,75 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+\textbf{(Q5)}
+
+\textit{(a)}
+\begin{proof}
+    By definition of symmetry, an entry in row $i$ column $j$
+    should equal the entry in row $j$ column $i$.
+
+    This is a result of the Axiom of Commutativity.
+\end{proof}
+
+\textit{(b)}
+\begin{proof}
+    Given the layout of the multiplication table, this means that
+    \[
+        \forall a \in \F, (a \cdot 0) = (0 \cdot a) = 0
+    \]
+
+    We can prove this as follows:
+    \begin{align*}
+        \text{(Add. Iden.)} \quad a \cdot 0 & = (a \cdot 0) + 0\\
+        \text{(Add. Inv.)} \quad & = (a \cdot 0) + (a \cdot 0 + (-a) \cdot 0)\\
+        \text{(Assoc.)} \quad & = (a \cdot 0 + a \cdot 0) + ((-a) \cdot 0)\\
+        \text{(Dist. )} \quad & = a \cdot (0 + 0) + (-a) \cdot 0\\
+        \text{(Add. Iden.)} \quad & = (0 \cdot a) + (0 \cdot (-a))\\
+        \text{(Add. Inv.)} \quad & = 0
+    \end{align*}
+\end{proof}
+
+\textit{(c)}
+This is a result of the uniqueness of each field element:
+
+\[
+a + b = c + b \implies a = c
+\]
+
+\begin{proof}
+    For some $a, b, c \in \F$, we have:
+    \begin{align*}
+        a + b = c + b & \implies a + b + (-b) = c + b + (-b)\\
+        & \implies a + 0 = c + 0\\
+        & \implies a = c
+    \end{align*}
+\end{proof}
+
+\textit{(d)}
+This is also a result of the uniqueness of each field element:
+
+\[
+    a \cdot c = b \cdot c \implies a = b
+\]
+
+\begin{proof}
+    For some $a, b, c \in \F \setminus \{0\}$, we have:
+    \begin{align*}
+        a \cdot b = c \cdot b & \implies 
+        a \cdot b \cdot b^{-1} = c \cdot b \cdot b^{-1}\\
+        & \implies a \cdot 1 = c \cdot 1\\
+        & \implies a = c
+    \end{align*}
+\end{proof}
+
+\textit{(e)} This set is not a field, as the properties addressed in
+\textit{(a), (c)} and \textit{(d)} are violated.
+
+\end{document}

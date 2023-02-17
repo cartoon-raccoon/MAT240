@@ -1,0 +1,60 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q5)}
+
+\begin{proof}
+    Since this system has a unique solution, it has to be trivial, (i.e. $x, y = 0$)
+
+    We first assume $ad - bc \neq 0$. We then have a matrix
+    
+
+    \[
+        \begin{pmatrix}
+            a & b \\
+            c & d \\
+        \end{pmatrix}
+    \]
+
+    By row-reduction:
+
+    \[
+        \begin{pmatrix}
+            a & b \\
+            c & d \\
+        \end{pmatrix}
+        \rightarrow
+        \begin{pmatrix}
+            ad & bd \\
+            bc & bd \\
+        \end{pmatrix}
+        \rightarrow
+        \begin{pmatrix}
+            ad - bc & 0 \\
+            bc & bd \\
+        \end{pmatrix}
+        \rightarrow
+        \begin{pmatrix}
+            1 & 0 \\
+            bc & bd \\
+        \end{pmatrix}
+    \]
+
+    Then $x = 0$, and by substitution into the original system $y = 0$.
+
+    We then assume the converse, that there is a trivial solution $x, y = 0$.
+
+    Then $\{(a, c), (b, d)\}$ is linearly independent.
+
+    Then $d(a, c) \neq c(b, d) \implies (ad, ac) \neq (bc, bd)$.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,51 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\divs}{\;|\;}
+
+\begin{document}
+
+\textbf{(Q4)}
+
+\textit{(a)}
+
+\begin{proof}
+    By earlier proof, 
+    $\gcd (a, n) = 1 \implies \exists x \in \Z 
+    \st [a] \cdot [x] = [1] \text{ in } \Z_n$.
+
+    We now seek to prove the converse:
+
+    \[
+        \exists x \in \Z_n \st [a] \cdot [x] = [1] \implies
+        \gcd (a, n) = 1
+    \]
+
+    Let $[a] \cdot [x] = [1]$ in $\Z_n$. Then by definition of 
+    congruence modulo $n$, we have
+    
+    \[
+        ax \equiv 1 \pmod n \implies n \divs 1 - ax
+        \implies \exists y \in \Z \st yn = 1 - ax
+    \]
+
+    Then by B\'{e}zout's Identity:
+
+    \[
+        \exists x, y \in \Z \st ax + yn = 1 \implies \gcd (a, n) = 1
+    \]
+\end{proof}
+
+Since both directions have been proven, this statement is if and only if.
+
+\textit{(b)} Since $\forall n \in \N, \Z_{n}$ fulfills all the field axioms
+except for that of the multiplicative identity, if every nonzero element of
+$\Z_n$ has a multiplicative identity, $\Z_n$ is a field. This occurs iff
+$n$ is prime.
+
+\end{document}

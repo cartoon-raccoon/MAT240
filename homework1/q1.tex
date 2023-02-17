@@ -1,0 +1,30 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q1)}
+\begin{theorem}
+    Let $\F$ be a field. Then if $a \in \F \setminus \{0\}$, then
+    $a^{-1}$ is invertible and $(a^{-1})^{-1} = a$.
+\end{theorem}
+
+\begin{proof}
+    Since $a \neq 0_{\F}$, $a^{-1}$ exists in $\F$. Then:
+
+    \begin{align*}
+        a & = 1 \cdot a\\
+        & = [(a^{-1})^{-1} \cdot a^{-1}] \cdot a\\
+        & = (a^{-1})^{-1} \cdot a^{-1} \cdot a\\
+        & = (a^{-1})^{-1} \cdot 1_{\F}\\
+        & = (a^{-1})^{-1}
+    \end{align*}
+\end{proof}
+
+\end{document}

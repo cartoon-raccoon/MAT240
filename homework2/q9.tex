@@ -1,0 +1,31 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q9)}
+
+\begin{proof}
+    We first assume:
+
+    \[
+        \sum_{i = 1}^{k} c_iA_i = 0 \implies \forall i \; c_i = 0
+    \]
+
+    Then since $(A^t)_{ij} = A_{ji} \forall A$, the same
+    operation essentially takes place with $A^t$, which means
+
+    \[
+        \sum_{i = 1}^{k} c_iA^{t}_{k} = 0 \implies \forall i \; c_i = 0
+    \]
+
+    The same argument holds for the converse.
+\end{proof}
+
+\end{document}

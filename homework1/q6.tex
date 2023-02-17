@@ -1,0 +1,56 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\fchar}{\operatorname{char}}
+
+\begin{document}
+
+\textbf{(Q6)}
+
+\textit{(a)}
+
+\begin{proof}
+    We have that for any $\Z_n$:
+
+    \[
+        \underbrace{[1] + [1] + \ldots + [1] + [1]}_{x \text{ times}} = [x]
+    \]
+
+    Then in $\Z_p$:
+
+    \[
+        \underbrace{[1] + [1] + \ldots + [1] + [1]}_{p \text{ times}} = [p] = [0]
+    \]
+
+    Which means $\fchar (\Z_p) = p$.
+\end{proof}
+
+\textit{(b)}
+
+\begin{proof}
+    Let $\F$ be a field. Suppose for the sake of contradiction that
+    $p = \fchar (\F) \neq 0$ and $p$ is composite. Then
+
+    \[
+        \exists x, y \in \Z \st xy = \fchar (\F)
+        \implies xy \cdot 1_{\F} = (x \cdot 1_{F}) \cdot (y \cdot 1_{\F})
+        = 0
+    \]
+
+    which in turn means $x \cdot 1_{\F} = 0$ or $y \cdot 1_{\F} = 0$.
+
+    Since $x, y < p$, this contradicts the assumption that $p = \fchar (\F)$,
+    so $p$ has to be prime.
+
+    For fields that have characteristic 0, consider infinite fields such as $\Q$
+    or $\R$. In such fields, repeatedly adding 1 to itself will never yield
+    0, thus fields can have characteristic 0. If $\fchar (\F) \neq 0$, then
+    $\fchar (\F)$ is prime.
+\end{proof}
+
+\end{document}

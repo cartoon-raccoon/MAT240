@@ -1,0 +1,60 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\newcommand{\Fcal}{\mathcal{F}}
+\newcommand{\Tcal}{\mathcal{T}}
+
+\begin{document}
+
+\textbf{(Q1)}
+
+\textit{(a)} Since $\Fcal$ is the function space mapping into a vector space,
+these properties arise from the scalar and additive properties of $V$.
+
+\textit{(b)}
+\begin{proof}
+    Set $s \in S$ as arbitrary, and $f, g, h \in \Fcal$. Then
+    \begin{align*}
+        (f + g)(s) & = f(s) + g(s)\\
+        (g + h)(s) & = g(s) + h(s)\\
+        f(s) + g(s) + h(s) & = f(s) + (g + h)(s)
+    \end{align*}
+\end{proof}
+
+\textit{(c)}
+\begin{proof}
+    Set $s \in S$ as arbitrary, and $f, g \in \Fcal$. Then
+    \begin{align*}
+        c(f(s)) = (cf)(s), & c(g(s)) = (cg)(s)\\
+        (cf)(s) + (cg)(s) & = c(f(s)) + c(g(s))\\
+        & = c(f(s) + g(s))\\
+        & = c((f + g)(s))
+    \end{align*}
+\end{proof}
+
+\textit{(d)}
+\begin{proof}
+    Let $s \in S$ be arbitrary, and $f \in \Fcal$. Then
+    \begin{align*}
+        (f + \mathbf{0})(s) & = f(s) + \mathbf{0}(s)\\
+        & = f(s) + \mathbf{0}_V\\
+        & = f(s)
+    \end{align*}
+\end{proof}
+
+\textit{(e)}
+\begin{proof}
+    Let $s \in S$, $g = -f$. Then
+    \begin{align*}
+        (f + g)(s) & = (f - f)(s)\\
+        & = f(s) - f(s)\\
+        & = \mathbf{0}_V
+    \end{align*}
+\end{proof}
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q8)}
+
+\textit{(a)}
+
+Let $A \in \mathbf{Sym}_n(\F)$. Then $A$ can be expressed in the form
+
+\[
+    \begin{pmatrix}
+        a_{11} & a_{12} & \ldots & a_{1n}\\
+        a_{12} & \ldots & \ldots & \ldots\\
+        \ldots &        &        & \\
+        a_{1n} &        &        & a_{nn}\\
+    \end{pmatrix}
+\]
+
+Then $cA$ for some $c \in \F$ will evaluate to:
+
+\[
+    \begin{pmatrix}
+        ca_{11} & ca_{12} & \ldots & ca_{1n}\\
+        ca_{12} & \ldots & \ldots & \ldots\\
+        \ldots &        &        & \\
+        ca_{1n} &        &        & ca_{nn}\\
+    \end{pmatrix}
+\]
+
+Which is still symmetrical.
+
+Similarly, $A + B$ where $B \in \mathbf{Sym}_n(\F)$ evaluates to:
+
+\[
+    \begin{pmatrix}
+        a_{11} + b_{11} & a_{12} + b_{12} & \ldots & a_{1n} + b_{1n}\\
+        a_{12} + b_{12} & \ldots & \ldots & \ldots\\
+        \ldots &        &        & \\
+        a_{1n} + b_{1n} &        &        & a_{nn} + b_{nn}\\
+    \end{pmatrix}
+\]
+
+Which is also symmetrical.
+
+\textit{(b)}
+
+Extending from Week 4's lecture activities on skew-symmetric matrices,
+we can let the basis for $\mathbf{Sym}_n(\F)$ be
+
+\[
+    \left\{E_{ij} + E_{ji} \st i < j \right\} 
+    \cup \left\{E_{ij} \st i = j\right\}
+\]
+
+\textit{(c)}
+
+Again extending from week 4's activities, $\dim \mathbf{Sym}_n(\F) = \frac{n(n - 1)}{2} + n$.
+
+\end{document}

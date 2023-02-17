@@ -1,0 +1,65 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q11)}
+
+\begin{proof}
+    Let $S$ be a basis for $W_1 \cap W_2$, where
+    $S = \{u_1, u_2, \ldots u_r\}$ and $\dim (W_1 \cap W_2) = r$.
+
+    Let $B_1$ be a basis of $W_1$ and $B_2$ be a basis of $W_2$.
+    By the Replacement Theorem, since $(W_1 \cap W_2) \sse W_1$ and $\sse W_2$,
+    we can express $B_1$ and $B_2$ as follows:
+
+    \begin{gather*}
+        B_1 = \{u_1, u_2, \ldots, v_1, \ldots v_s\} \implies \dim W_1 = r + s\\
+        B_2 = \{u_1, u_2, \ldots, w_1, \ldots w_t\} \implies \dim W_2 = r + t\\
+    \end{gather*}
+
+    Let $B = B_1 \cup B_2$. Then
+
+    \[
+        B = \{u_1, u_2, \ldots v_1, \ldots v_s, w_1, \ldots w_t\}
+    \]
+
+    Since $|B| = (r + s) + (r + t) - r = \dim W_1 + \dim W_2 - \dim (W_1 \cap W_@)$,
+    it now remains to prove that $B$ is a basis for $V$.
+
+    To show linear independence, let
+
+    \[
+        \sum_{i = 1}^{r} a_i u_i +
+        \sum_{j = 1}^{s} b_j v_j +
+        \sum_{k = 1}^{t} c_k w_k = 0
+    \]
+
+    Since $u_i$ and $v_j$ form $B_1$ we can conclude that
+    $a, b = 0 \;\; \forall i, j$.
+
+    Similarly, since $u_i, w_k$ for $B_2$, we can conclude the same for
+    $b, c \;\; \forall i, j$.
+
+    We now prove that $B$ spans $W_1 + W_2$. Let $w \in (W_1 + W_2)$.
+    Then $w = w_1 + w_2$ where $w_1 \in W_1, w_2 \in W_2$.
+
+    Then
+    \begin{gather*}
+        w_1 = \sum_{i = 1}^{r} p_i u_i + \sum_{j = 1}^{s} q_j v_j\\
+        w_2 = \sum_{i = 1}^{r} g_i u_i + \sum_{k = 1}^{t} h_k w_k\\
+        w = \sum_{i = 1}^{r} (p_i + g_i)u_i + \sum_{j = 1}^{s} q_j v_j
+        + \sum_{k = 1}^{t} h_k w_k
+    \end{gather*}
+
+    Which is in $\operatorname{span} B$.
+
+\end{proof}
+
+\end{document}

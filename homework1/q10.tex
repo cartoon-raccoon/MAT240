@@ -1,0 +1,57 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q10)}
+
+\textit{(a)} False.
+
+As a counterexample, let $a = -a$ and $b = -b$. Then $a + a = 0 = b + b$,
+while $a$ and $b$ are not necessarily equal.
+
+\textit{(b)} False.
+
+Let $\F$ be a field with the following addition table:
+
+\begin{center}
+    \begin{tabular}{ |c|c|c|c|c| }
+        \hline
+        + & 0 & 1 & a & b \\
+        \hline
+        0 & 0 & 1 & a & b \\
+        \hline
+        1 & 1 & 0 & b & a \\
+        \hline
+        a & a & b & 0 & 1 \\
+        \hline
+        b & b & a & 1 & 0 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+In this field, $\operatorname{char} (\F)$ = 2, which is prime, but $\F$ is not $\Z_2$.
+
+\textit{(c)} False.
+
+Let $p(x) = (x^2 + 1)^2 = x^4 + 2x^2 + 1$ in $\R$. $p$ is reducible, but has no solutions
+in $\R$.
+
+\textit{(d)} True.
+
+\begin{proof}
+    Suppose for the sake of contradiction that $p$ is irreducible
+    and $p$ has solutions. Then $\exists a \st p(x) = (x - a)q(x)$,
+    where $q$ is another polynomial.
+
+    Then $\deg p > 1 \implies \deg q \geq 1$,
+    which implies that $p$ is in fact reducible, thus forming a contradiction.
+\end{proof}
+
+\end{document}

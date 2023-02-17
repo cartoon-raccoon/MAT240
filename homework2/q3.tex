@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q3)}
+
+\textit{(a)}
+
+\begin{proof}
+    Since $W$ is the set of solutions, then
+    $\forall w \in W, \; w = \sum_{i = 1}^{k} t_ix_i$.
+
+    Let $S = \{\mathbf{x}_1, \mathbf{x}_2,\ldots \mathbf{x}_k\}$.
+
+    $W$ represents every linear combination of the base vectors
+    $\mathbf{x}_1 \ldots \mathbf{x}_k$, so $W = \operatorname{span} S$.
+\end{proof}
+
+\textit{(b)}
+
+\begin{proof}
+    For the sake of contradiction, assume that
+    \[
+        \sum_{i = i}^{k} t_ix_i = \mathbf{0} \text{ and }
+        \exists t_j \st t_j \neq 0
+    \]
+
+    If there is only one such $t$, then that $t$ has to be zero.
+
+    If there is more than one, then $S$ no longer spans $w$.
+
+    Thus, $S$ has to be linearly independent.
+\end{proof}
+
+\textit{(c)}
+
+Since $\{\mathbf{x}_1, \mathbf{x}_2,\ldots \mathbf{x}_k\}$ is linearly
+independent and spans $W$ is is a basis for $W$.
+
+\end{document}

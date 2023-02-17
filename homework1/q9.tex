@@ -1,0 +1,63 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q9)}
+
+\begin{proof}
+    By the Fundamental Theorem of Algebra, any polynomial $p$ over $\C$ can
+    be reduced into a product of linear terms over $\C$, the number of terms
+    being $\deg p$. Additionally, if $a$ is a root of $p$, then $\bar{a}$
+    is also a root of $p$. Thus, roots of $p$ come in conjugate pairs.
+
+    What is left is to consider specific cases of $\deg p$.
+
+    \vspace{5mm}
+    \textbf{Considering cases where $\deg p = 1$:}
+
+    Suppose for the sake of contradiction, that $p$ is reducible. Then
+
+    \[
+        \exists a, b \in P(\R) \st ab - p \implies \deg a + \deg b = \deg p
+    \]
+
+    It is also a condition that $\deg a, \deg b \neq 0$.
+
+    However, $\deg p = 1 \implies \deg a$ or $\deg b = 0$, which is a contradiction.
+
+    \vspace{5mm}
+    \textbf{Considering cases where $\deg p = 2$:}
+
+    By earlier proof, if $p$ is irreducible, then it has no real roots.
+
+    \vspace{5mm}
+    \textbf{Considering cases for $\deg p$ is even and $> 2$:}
+
+    Any polynomial of an even degree can be expressed as a product of
+    polynomials of degree 2, so it is reducible.
+
+    \vspace{5mm}
+    \textbf{Considering cases for $\deg p$ is odd and $> 1$:}
+
+    Since roots of polynomials come in conjugate pairs, there will always
+    be one root remaining. Since roots come in conjugate pairs, this root has to
+    be equal to its conjugate:
+
+    \[
+        a = \bar{a} \implies a = x + 0i
+    \]
+
+    Since the imaginary part of the root is $0$, it is wholly real.
+
+    Since $p$ has a real root $a$, $\exists q \in P(\R) \st p(x) = (x - a)p(x)$,
+    thus $p$ is reducible.
+
+\end{proof}
+\end{document}

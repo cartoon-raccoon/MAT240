@@ -1,0 +1,102 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q2)}
+
+\begin{theorem}
+    Let $\F = \{a + b\sqrt{11} | a, b \in \Q\}$, where $+,\cdot$ are
+    defined by:
+
+    \begin{align*}
+        (a + b\sqrt{11}) + (c + d\sqrt{11}) & = (a + b) + (c + d)\sqrt{11}\\
+        (a + b)\sqrt{11} \cdot (c + d\sqrt{11}) & =
+        (ac + 11bd) + (ad + bc)\sqrt{11}
+    \end{align*}
+
+    Applying the properties of $\Q$, $\F$ is a field.
+\end{theorem}
+
+\begin{proof}
+    We prove $\F$ is a field by verifying all the field axioms one by one.
+
+    \vspace{5mm}
+
+    \textbf{Associativity}
+    \begin{align*}
+        (a + b\sqrt{11}) + \left[(c + d\sqrt{11}) + (f + g\sqrt{11})\right]
+        & = (a + b\sqrt{11}) + \left[(c + f) + (d + g)\right]\sqrt{11}\\
+        & = \left[a + (c + f)\right] + \left[b + (d + g)\right]\sqrt{11}\\
+        & = [(a + c) + f] + [(b + d) + g]\sqrt{11}\\
+        & = \left[(a + c) + (b + d)\right]\sqrt{11} + (f + g\sqrt{11})\\
+        & = \left[(a + b\sqrt{11}) + (c + d\sqrt{11})\right] + (f + g\sqrt{11})
+    \end{align*}
+
+    \vspace{5mm}
+    \textbf{Commutativity}
+    \begin{align*}
+        (a + b\sqrt{11}) + (c + d\sqrt{11}) & = (a + c) + (b + d)\sqrt{11}\\
+        & = (c + a) + (d + b)\sqrt{11}\\
+        & = (c + d\sqrt{11}) + (a + b\sqrt{11})
+    \end{align*}
+
+    \vspace{5mm}
+    \textbf{Distributivity}
+    \begin{align*}
+        & (a + b\sqrt{11}) \cdot \left[(c + d\sqrt{11}) + (f + g\sqrt{11})\right]\\
+        & = (a + b\sqrt{11}) \cdot \left[(c + f) + (d + g)\sqrt{11}\right]\\
+        & = \left[a(c + f) + 11b(d + g)\right] + \left[a(d + g) + b(c + f)\right]\sqrt{11}\\
+        & = (ac + af + 11bd + 11bg) + (ad + ag + bc + bf)\sqrt{11}\\
+        & = \left[(ac + 11bd) + (af + 11bg)\right] + \left[(ad + bc) + (ag + bf)\right]\sqrt{11}\\
+        & = \left[(cd + 11bd) + (ad + bc)\sqrt{11}\right]
+          + \left[(af + 11bg) + (ag + bf)\sqrt{11}\right]\\
+        & = (a + b\sqrt{11}) \cdot (c + d\sqrt{11})
+          + (a + b\sqrt{11}) \cdot (f + g\sqrt{11})
+    \end{align*}
+
+    \newpage
+
+    \textbf{Identities}
+    
+    Let the additive identity be $0 + 0\sqrt{11}$. Then
+    \[
+        (a + b\sqrt{11}) + (0 + 0\sqrt{11}) = (a + 0) + (b + 0)\sqrt{11}
+        = a + b\sqrt{11}
+    \]
+
+    Let the multiplicative identity be $1 + 0\sqrt{11}$. Then
+    \[
+        (a + b\sqrt{11}) \cdot (1 + 0\sqrt{11}) = (a + 0) + (0 + b)\sqrt{11}
+        = a + b\sqrt{11}
+    \]
+
+    \textbf{Inverses}
+
+    Let the additive inverse be $-a - b\sqrt{11}$. Then
+    \[
+        (a + b\sqrt{11}) + (-a - b\sqrt{11}) = (a - a) + (b - b)\sqrt{11}
+        = 0 + 0\sqrt{11}
+    \]
+
+    Let the multiplicative inverse be
+    $\displaystyle{\left(\frac{a}{a^2 - 11b^2} - \frac{b}{a^2 - 11b^2}\sqrt{11}\right)}$.
+    Then
+
+    \begin{gather*}
+        \left(\frac{a}{a^2 - 11b^2} - \frac{b}{a^2 - 11b^2}\sqrt{11}\right) \cdot (a + b\sqrt{11})\\
+        = \left(\frac{a^2}{a^2 - 11b^2} - \frac{11b^2}{a^2 - 11b^2}\right) 
+        + \left(\frac{ab}{a^2 - 11b^2} - \frac{ab}{a^2 - 11b^2}\right)\sqrt{11}\\
+        = 1 + 0\sqrt{11}
+    \end{gather*}
+
+    Since all the field axioms have been verified, $\F$ is a field.
+\end{proof}
+
+\end{document}

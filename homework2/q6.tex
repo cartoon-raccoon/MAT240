@@ -1,0 +1,61 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q6)}
+
+\begin{proof}
+    We formulate a homogenous system from the set given to us:
+
+    \[
+        \begin{cases}
+            a\mathbf{x} + c\mathbf{y} = 0\\
+            b\mathbf{x} + d\mathbf{y} = 0
+        \end{cases}
+    \]
+
+    We can then row-reduce:
+
+    \[
+        \begin{pmatrix}
+            a & c & \vert & 0\\
+            b & d & \vert & 0
+        \end{pmatrix}
+        \rightarrow
+        \begin{pmatrix}
+            1 & \frac{c}{a} & \vert & 0\\
+            b & d & \vert & 0
+        \end{pmatrix}
+        \rightarrow
+        \begin{pmatrix}
+            1 & \frac{c}{a} & \vert & 0\\
+            0 & \frac{ad - bc}{a} & \vert & 0
+        \end{pmatrix}
+    \]
+
+    Since $ad - bc \neq 0$, this is not yet in RREF and we continue
+    to row-reduce.
+
+    \[
+        \begin{pmatrix}
+            1 & \frac{c}{a} & \vert & 0\\
+            0 & 1 & \vert & 0
+        \end{pmatrix}
+        \rightarrow
+        \begin{pmatrix}
+            1 & 0 & \vert & 0\\
+            0 & 1 & \vert & 0
+        \end{pmatrix}
+    \]
+
+    Which forms a linearly independent set.
+\end{proof}
+
+\end{document}

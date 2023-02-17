@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+
+\textbf{(Q8)}
+
+\begin{theorem}
+    Let $p \in P(\C)$ be a polynomial with real coefficients. If $a$
+    is a root of $p$, then $\bar{a}$ is a root of $p$.
+\end{theorem}
+
+\begin{proof}
+    The standard form of a polynomial $p(x)$ is:
+
+    \[
+        p(x) = c_0x^0 + c_1x^1 + c_2x^2 + \ldots + c_nx^n
+    \]
+
+    Then by the definiion of root, if $a$ is a root, then
+
+    \begin{align*}
+        p(x) & = c_0a^0 + c_1a^1 + c_2a^2 + \ldots + c_na^n\\
+        & = \sum_{j = 0}^{n} c_j(a)^j = 0
+    \end{align*}
+
+    Then we have
+
+    \begin{align*}
+        \overline{\sum_{j = 0}^{n} c_j(a)^j} & = 
+        \sum_{j = 0}^{n} \overline{c_j(a)^j} = \overline{0}\\
+        & = \sum_{j = 0}^{n} c_j(\overline{a})^j = 0\\
+    \end{align*}
+\end{proof}
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+\textbf{(Q7)}
+
+\textit{(a)}
+
+\begin{align*}
+    (3 + 2i)z & = (2 + i)(-2i)\\
+    (3 + 2i)z & = 2 - 4i\\
+    z & = (2 - 4i) \cdot \frac{3 -2i}{3^2 + 2^2} = \frac{-(2 + 16i)}{13}
+\end{align*}
+
+\textit{(b)}
+
+\begin{gather*}
+    z^6  = -125\\
+    z^6 = 125e^{i(\pi + 2k\pi)}\\
+    z  = \sqrt[6]{125}e^{i\frac{\pi}{6} + \frac{2k\pi}{6}}\\
+    z  = x + yi \st  x = \sqrt{5} \cos \left(\frac{\pi}{6} + \frac{2k\pi}{6}\right)\\
+    y = \sqrt{5} \sin \left(\frac{\pi}{6} + \frac{2k\pi}{6}\right)\\
+    \Downarrow\\
+    x = \sqrt{5}\cos(\frac{3\pi}{6}), \sqrt{5}\cos(\frac{5\pi}{6}),
+    \ldots, \sqrt{5}\cos(\frac{13\pi}{6})\\
+    = 0, \frac{\sqrt{15}}{2}, \frac{\sqrt{15}}{2}, 0, \frac{\sqrt{15}}{2},
+    \frac{\sqrt{15}}{2}\\
+    y = \sqrt{5}\sin(\frac{3\pi}{6}), \sqrt{5}\sin(\frac{5\pi}{6}),
+    \ldots, \sqrt{5}\sin(\frac{13\pi}{6})\\
+    y = \sqrt{5}, \pm\frac{\sqrt{5}}{2}, -\sqrt{5}, \mp\frac{\sqrt{5}}{2}\\
+    \Downarrow\\
+    z = \pm\sqrt{5}i, \frac{\sqrt{15}}{2} \pm \frac{\sqrt{5}}{2}
+\end{gather*}
+
+\textit{(c)}
+
+\begin{gather*}
+    e^z = 1 - \sqrt{3}i\\
+    e^x e^iy = \sqrt{1 + 3}e^{i\frac{\pi}{3}} = 2e^{i\frac{\pi}{3}}\\
+    \therefore e^x = 2 \implies x = \ln 2, y = -\frac{\pi}{3}\\
+    \therefore z = \ln 2 - \frac{\pi}{3}i
+\end{gather*}
+
+\end{document}
