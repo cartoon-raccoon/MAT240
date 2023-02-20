@@ -1,0 +1,78 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+\textbf{(Q6)}
+
+\textit{(a)}
+We obtain a matrix for this linear transformation by taking $T(e_i)$
+for each standard basis vector for $\R^4$.
+\begin{gather*}
+    T(1, 0, 0, 0) = (1, 0, 1, 1)\\
+    T(0, 1, 0, 0) = (2, 0, 1, 3)\\
+    T(0, 0, 1, 0) = (3, 0, 2, 4)\\
+    T(0, 0, 0, 1) = (1, 0, 0, 2)
+\end{gather*}
+
+Taking each resultant vector as a row, we obtain the matrix
+\[
+    \begin{bmatrix}
+        1 & 0 & 1 & 1\\
+        2 & 0 & 1 & 3\\
+        3 & 0 & 2 & 4\\
+        1 & 0 & 0 & 2
+    \end{bmatrix}
+\]
+
+\emptyline
+\textit{(b)}
+
+We find $N(T)$ by solving the matrix obtained in \textit a for a
+system of homogenous equations. Applying row-reduction, we have:
+
+\[
+    \begin{bmatrix}
+        1 & 0 & 1 & 1\\
+        2 & 0 & 1 & 3\\
+        3 & 0 & 2 & 4\\
+        1 & 0 & 0 & 2
+    \end{bmatrix} \to
+    \begin{bmatrix}
+        1 & 0 & 1 & 1\\
+        0 & 0 & 1 & -1\\
+        0 & 0 & -1 & 1\\
+        0 & 0 & -1 & 1
+    \end{bmatrix} \to
+    \begin{bmatrix}
+        1 & 0 & 0 & 2\\
+        0 & 0 & 1 & -1\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}
+\]
+
+Let $y = t$, $w = s$. Then $x = -2s$, $z = s$.
+So the general solution has the form
+\[(-2s, t, s, s)\]
+
+Grouping by parameter, we then obtain
+\[
+    t(0, 1, 0, 0) + s(-2, 0, 1, 1)
+\]
+So a basis for $N(T)$ is $\{(0, 1, 0, 0), (-2, 0, 1, 1)\}$
+and has dimension 2.
+
+\emptyline
+\textit{(c)} No.
+
+In order for $T$ to be invertible, it has to be both injective
+and surjective. By proof of Q5(a), in order for $T$ to be injective
+it has to have $N(T) = \{\textbf{0}\}$. Since this is not the case,
+$T$ is not injective and thus not invertible.
+\end{document}

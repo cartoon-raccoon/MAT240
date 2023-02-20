@@ -1,0 +1,28 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+\textbf{Q(4)}
+\begin{theorem}
+    Let $V$ be a finite dimensional vector space over a field $\F$ and
+    $W \sse V$ a supspace. Then $\dim W = \dim V \iff W = V.$
+\end{theorem}
+
+\begin{proof}
+    Suppose $V = W$. Then $\dim V = \dim W$.
+
+    Now suppose $\dim V = \dim W = n$. Let the set
+    $A = \{x_1, x_2, \ldots, x_n\}$ be a basis for $W$.
+    Since $A$ is linearly independent in $W$, it is also
+    linearly independent in $V$.
+    Then since $\dim V = \dim W$, $A$ is also a basis for $V$.
+
+    Since $V$ and $W$ have the same basis, $V = W$.
+\end{proof}
+\end{document}

@@ -1,0 +1,119 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+\textbf{(Q3)}
+
+\textit{(a)}
+
+\[
+    \begin{pmatrix}
+        5 & 6 & 0 & 0 & 0\\
+        2 & 3 & 0 & 0 & 0\\
+        0 & 0 & 1 & 9 & 4\\
+        0 & 0 & 7 & 3 & 2\\
+        0 & 0 & 4 & 5 & 8\\
+    \end{pmatrix}
+\]
+
+\textit{(b)}
+\begin{proof}
+    Breaking down the two block-diagonal matrices that we are multiplying,
+    are of the form:
+    \[
+        \begin{bmatrix}
+            a_{11} & a_{12} & \ldots & a_{1k} & 0_{1(k+1)} & \ldots & 0_{1n}\\
+            a_{21} & \ddots &        &        & \vdots     &        &\\
+            \ldots &        & \ddots &        & \vdots     &        &\\
+            a_{k1} & \ldots &        & a_{kk} & 0_{k(k+1)} & \ldots & 0_{kn}\\
+            0_{(k+1)1} & 0_{(k+1)2} & \ldots & 0_{(k+1)k}
+            & b_{(k+1)(k+1)} & \ldots & b_{(k+1)n}\\
+            \vdots & &        &        & \vdots &            &        &\\
+            \ldots &        &        & & \vdots & \ddots &\\
+            0_{n1} & \ldots & \ldots & 0_{nk} & b_{n(k+1)} & \ldots & b_{nn}\\
+        \end{bmatrix}
+    \]
+
+    For the other multiplicand, the $a$ and $b$ entries are replaced
+    with $c$ and $d$ respectively.
+
+    From the defintiion of matrix multiplication, we have that for
+    any entry $ij$ in the resultant matrix, it is equivalent to
+    \[
+        (MN)_{ij} = \sum_{l = 1}^{n} M_{il}N_{lj}
+    \]
+
+    Considering both $l \leq k$ for both matrices, then for some $l$ we have 
+    \[(MN)_{il} = \sum_{q = 1}^{l} a_{iq}c_{ql}\] and
+    \[(MN)_{lj} = \sum_{q = 1}^{l} a_{qi}c_{jq}\]
+
+    If there exists one $l > k$, then that entry in one matrix will be
+    multiplied by a zero entry in the other matrix
+    and so the entry in the resulting matrix will be zero.
+
+    However, if both $l > k$, then for some $l$ we have 
+    \[(MN)_{il} = \sum_{q = 1}^{n-k} b_{iq}d_{ql}\] and
+    \[(MN)_{lj} = \sum_{q = 1}^{n-k} b_{qi}d_{jq}\]
+
+    and a similar result if there is one $l \leq k$.
+
+    \newpage
+    Considering all these cases, we have the following matrix:
+    \[
+        \begin{bmatrix}
+            a_{11}c_{11} & a_{12}c_{12} & \ldots & a_{1k}c_{1k} 
+            & 0_{1(k+1)} & \ldots & 0_{1n}\\
+            a_{21}c_{21} & \ddots &        &        & \vdots     &        &\\
+            \ldots &        & \ddots &        & \vdots     &        &\\
+            a_{k1}c_{k1} & \ldots &        & a_{kk}c_{kk} 
+            & 0_{k(k+1)} & \ldots & 0_{kn}\\
+            0_{(k+1)1} & 0_{(k+1)2} & \ldots & 0_{(k+1)k}
+            & bd_{(k+1)(k+1)} & \ldots & bd_{(k+1)n}\\
+            \vdots & &        &        & \vdots &            &        &\\
+            \ldots &        &        & & \vdots & \ddots &\\
+            0_{n1} & \ldots & \ldots & 0_{nk} & bd_{n(k+1)} & \ldots & bd_{nn}\\
+        \end{bmatrix}
+    \]
+
+    which takes the form
+    $\begin{pmatrix}AC & O_{k,(n-k)} \\ O_{(n-k),k} & BD\end{pmatrix}$.
+\end{proof}
+
+\textit{(c)}
+\begin{proof}
+    First assume $M$ is invertible, so
+    $\exists N \in \mathcal{M}_{n \times n} \st MN = NM$.
+
+    Let $N = \begin{pmatrix}C&O_{k,(n-k)}\\O_{(n-k),k}&D\end{pmatrix}$.
+    $N$ is block diagonal.
+    
+    Then
+
+    \[
+        MN = \begin{pmatrix}
+            AC & O_{k,(n-k)}\\
+            O_{(n-k),k} & BD
+        \end{pmatrix},\quad
+        NM = \begin{pmatrix}
+            CA & O_{k,(n-k)}\\
+            O_{(n-k),k} & DB
+        \end{pmatrix}
+    \]
+
+    Since $MN = NM$, $AC = CA$ and $BD = DB$ and thus $A$ and $B$
+    are invertible.
+
+    Now assume $A$ and $B$ are invertible, so
+    $\exists C, D \st AC - CA \text{ and } BD = DB$.
+    Then let $N$ be defined as above.
+
+    Then $MN, NM$ are defined by the above equations.
+    Since $AC = CA$ and $BD - DB$, $MN = NM$ and thus $M$ is invertible.
+\end{proof}
+\end{document}

@@ -1,0 +1,52 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Om}{\operatorname{O}}
+
+\begin{document}
+\textbf{(Q2)}
+
+\textit{(a)}
+\begin{proof}
+    First assume $[A, B] = O_n$. Then $AB - BA = \textbf{O}_n \implies AB = BA$.
+
+    Then assume $AB = BA$. Then by definition, $[A, B] = AB - BA = \textbf{O}_n$.
+\end{proof}
+
+\textit{(b)}
+\begin{proof}
+    By definition, $[B, A] = BA - AB$. Then
+
+    \[
+        -(BA - AB) = -[B, A] = (AB - BA) = [A, B]
+    \]
+\end{proof}
+
+\textit{(c)}
+\begin{proof}
+    By definition of $[A, B]$, we expand the given expressions:
+    \begin{align*}
+        [A, [B, C]] & = [A, (BC - CB)] = A(BC - CB) = (BC - CB)A\\
+        & = ABC - ACB - BCA + CBA\\
+        [C, [A, B]] & = [C, (AB - BA)] = C(AB - BA) - (AB - BA)C\\
+        & = CAB - CBA - ABC + BAC\\
+        [B, [C, A]] & = [B, (CA - AC)] = B(CA - AC) - (CA - AC)B\\
+        & = BCA - BAC - CAB + ACB
+    \end{align*}
+
+    Adding all 3 expanded expressions together, we see that we can
+    form pairs of matrix products and their negatives:
+
+    \begin{align*}
+          & (ABC - ABC) + (ACB - ACB)\\
+        + & (BAC - BAC) + (BCA - BCA)\\
+        + & (CAB - CAB) + (CBA - CBA)\\
+        = & \Om_{n \times n}
+    \end{align*}
+\end{proof}
+\end{document}

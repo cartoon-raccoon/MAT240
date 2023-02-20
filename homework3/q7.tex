@@ -1,0 +1,51 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q7)}
+
+\textit{(a)} False.
+
+The contrapositive of the given statement is that if $\dim V \geq \dim W$,
+then there exists at least one injective linear map. This means
+that there exists one linear map $T$ such that $N(T) = \{\mathbf{0}\}$.
+
+By the Rank-Nullity Theorem:
+\begin{align*}
+    \dim (\im T) + \dim N(T) = \dim V & \implies 
+    \dim (\im T) = \dim V - \dim N(T)\\
+    & \implies \dim W = \dim V - \dim N(T)
+\end{align*}
+
+For cases where $\dim V = \dim W$, $\dim N(T)$ can clearly be 0, so
+injective linear maps exist for that case. However, if $\dim V > \dim W$,
+then $\dim N(T)$ can never be 0, so $N(T) \neq \{\mathbf{0}\}$.
+
+\emptyline
+\textit{(b)} False.
+
+As a counterexample, let $V = \R^3$, $W = \R^2$, and $T \st V \to W$
+be given by $T(x, y, z) = (x, y)$.
+
+Then there are infinite choices for $z$ for which $T(x, y, z)$ will
+map to the same $(x, y)$. For example, $(1, 2, 3)$ and $(1, 2, 4)$
+both map to $(1, 2)$.
+
+\emptyline
+\textit{(c)} False.
+
+Let $T$ be the linear map defined in (b). Since it maps from a vector
+space of dimension 3, the vector space should have basis
+$\{\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3\}$. However the vector
+space it maps to is of dimension 2, so it has basis
+$\{\mathbf{x}_1, \mathbf{x}_2\}$, which is of a different cardinality to
+the basis of $T$'s domain.
+
+\end{document}

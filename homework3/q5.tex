@@ -1,0 +1,69 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{Q(5)}
+
+\textit{(a)}
+\begin{proof}
+    We aim to prove $T$ is injective using the definition of
+    injectivity, that is,
+    \[
+        T(x_1) = T(x_2) \implies x_1 = x_2
+    \]
+    First suppose $T(x_1) = T(x_2)$ and $x_1 = x_2$. Then
+    $T(x_1) - T(x_2) = \textbf{0}_W$.
+    By linearity of $T$, we have
+    $T(x_1) - T(x_2) = T(x_1 - x_2) = \textbf{0}_W$. Since
+    $x_1 = x_2$, we have
+
+    \[T(x_1 - x_2) = T(\textbf{0}_V) = \textbf{0}_W\]
+
+    So $N(T) = \{\textbf{0}_V\}$, since any other value implies
+    $x_1 \neq x_2$.
+
+    Now suppose $N(T) = \{\textbf{0}_W\}$, and let $T(x_1) = T(x_2)$.
+
+    Then $T(x_1) - T(x_2) = \textbf{0}_W$. Again, by linearity of $T$,
+    we have $T(x_1) - T(x_2) = T(x_1 - x_2) = \textbf{0}_W$. Since
+    $N(T) = \{\textbf{0}_V\}$, $x_1 - x_2$ has to be $\textbf{0}_V$.
+    Then 
+    
+    \[x_1 - x_2 = \textbf{0}_V \implies x_1 = x_2\]
+
+    Which satisfies the definition of injectivity.
+\end{proof}
+
+\textit{(b)}
+\begin{proof}
+    We assume for the entire proof that $\dim V = \dim W = n$.
+
+    First, suppose $T$ is injective; that is, $N(T) = \{\textbf{0}_V\}$.
+
+    Then by the Rank-Nullity Theorem,
+    \[
+        \dim V - \dim N(T) = n - 0 = n = \dim (\im T)
+    \]
+
+    We have $\im T$ is a subspace of $W$, and
+    $\dim (\im T) = \dim V = \dim W$, so $\im T = W$, and thus
+    $T$ is surjective.
+
+    Now suppose $T$ is surjective, so
+    $\im T = W \implies \dim (\im T) = \dim W = n$. Then
+    \begin{gather*}
+        \dim (\im T) + \dim N(T) = n = \dim W = \dim V\\
+        \dim (\im T) = \dim W = n \implies \dim N(T) = 0 \implies N(T)
+        = \{\textbf{0}_V\}
+    \end{gather*}
+
+    So $T$ is injective.
+\end{proof}
+\end{document}
