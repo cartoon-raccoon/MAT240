@@ -1,0 +1,45 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q7)}
+
+\textit{(a)}
+\begin{proof}
+    First assume $P$ is invertible, so $T_P$ is an isomorphism.
+    Let $\beta$ be a basis of $\F^n$, and $\beta' = T(\beta)$.
+    Since $T$ is an isomorphism, $\beta'$ is linearly independent
+    and a spanning set for $\F^n$.
+    So $P = [I_{\F^n}]_\beta^{\beta'}$.
+
+    Now let $P = [I_{\F^n}]_\beta^{\beta'}$ for two bases $\beta, \beta'$
+    of $\F^n$. Then $T_P$ is a linear map mapping $\F^n \to \F^n$.
+
+\end{proof}
+
+\textit{(b)}
+\begin{proof}
+    First assume $A \sim B$. Then $\exists P^{-1} \in \mathcal{M}_{n \times n}$
+    such that $B = P^{-1}AP$. Since P is invertible,
+    $P = [I_{\F^n}]_\beta^{\beta'}$ for some bases $\beta, \beta'$.
+    Then
+    \[
+        B = [I_n]_{\beta}^{\beta'}[T]_{\beta}[I_n]_\beta^{\beta'}
+        = [I_n]_{\beta}^{\beta'}[T]_{\beta}
+        = [I_n]_{\beta'}
+    \]
+    Now suppose $\exists \beta' \st B = [I_n]_\beta^{\beta'}$. Then
+    \[
+        B = [I_n]_{\beta}^{\beta'}[T]_{\beta}
+        = [I_n]_{\beta}^{\beta'}[T]_{\beta}[I_n]_\beta^{\beta'}
+    \]
+    where $[T]_\beta = A$, which fulfills the definition of similarity.
+\end{proof}
+\end{document}

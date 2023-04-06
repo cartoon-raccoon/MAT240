@@ -1,0 +1,21 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\rank}{\operatorname{rank}}
+
+\begin{document}
+\textbf{(Q4)}
+\begin{proof}
+    First suppose $A$ is invertible. Then $\rank A = \rank T_A = n$.
+    Then since $\rank T_A = n$, $T_A$ is an isomorphism and thus bijective.
+
+    Now assume $T_A$ is invertible. Then $\rank T_A = n = \rank A$.
+    Then since $\rank A = n$, it is also invertible.
+\end{proof}
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\rank}{\operatorname{rank}}
+
+\begin{document}
+\textbf{(Q8)}
+
+\textit{(a)}
+$\{(x, mx) | x \in \R\}$ and $\{(x, -\tfrac{1}{m}x) | x \in \R\}$.
+
+$y = -\frac{1}{m}x$ is orthogonal to $y = mx$, so any reflection across
+the latter of any element in $y = -\frac{1}{m}$ would still lie on the
+same line.
+
+\textit{(b)}
+\begin{proof}
+    By earlier proof, $T$ is an isomorphism, so $N(T) = \{0_{\R^3}\}$.
+    Then $T(N(T))$ = $N(T)$ by linearity, so $N(T)$ is T-invariant.
+
+    Since $T$ is isomorphic, 
+    \[
+        \rank T = \dim T = \dim (\im T) = n \implies
+        \im T = \R^3 \sse \R^3
+    \]
+\end{proof}
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q5)}
+
+\textit{(a)}
+Each vector $\mathbf{a}_i$ in $\gamma$ is given by $A\mathbf{e}_i$, so
+\[
+    A = \left[A\mathbf{e}_1, \ldots A\mathbf{e}_n\right] =
+    \left[T_A(\mathbf{e}_1), \ldots T_A(\mathbf{e}_n)\right] =
+    \left[I_{\F^n}\right]_\gamma^\beta
+\]
+Since $A$ is a change of basis matrix, it must be invertible.
+
+\textit{(b)}
+\textit{(i)}
+Since the columns of $A$ are given by the elements of $\gamma$:
+\[
+    A_i = \mathbf{a}_i = T_A(\beta_i)
+\]
+any vector in $\im T_A$ can be expressed as a linear combination
+of the columns of $A$, which is $\gamma$.
+
+\end{document}

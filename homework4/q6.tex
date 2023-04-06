@@ -1,0 +1,44 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q6)}
+
+\begin{proof}
+    First, suppose $T(\beta)$ is a basis for $W$. Let
+    $\beta = \{\mathbf{v}_1, \mathbf{v}_2, \ldots \mathbf{v}_n\}$. Then
+    $T(\beta) = \{T(v_1), T(v_2), \ldots T(v_n)\}$.
+    Since $T$ is linear and $|\beta| = |T(\beta)| \implies \dim V = \dim W$,
+    $T$ is an isomorphism.
+    
+    Then suppose $T$ is an isomorphism. Thus $T$ is injective.
+
+    Since $T$ is injective, every element in $T(\beta)$ is distinct, and
+    $W$ spans $T(\beta)$
+    Then to prove linear independence, we express the elements of
+    $T(\beta)$ as a linear combination equating to 0:
+    \[
+        a_1T(v_1) + a_2T(v_2) + \ldots + a_nT(v_n) = 0
+    \]
+    Then by linearity and the properties of the null space:
+    \begin{align*}
+        a_1T(v_1) + \ldots + a_nT(v_n) & = T(a_1v_1) + \ldots + T(a_nv_n)\\
+        & = T(a_1v_1 + \ldots + a_nv_n)\\
+        & = 0_W
+    \end{align*}
+    Since $T$ is injective, $N(T) = \{0_V\}$ and thus
+    \[
+        a_1v_1 + a_2v_2 + \ldots + a_nv_n = 0_V
+    \]
+    Since $\beta$ is a basis, it is linearly independent and thus
+    all the coefficients are also $0$, thus $T(\beta)$ is also
+    linearly independent.
+\end{proof}
+\end{document}

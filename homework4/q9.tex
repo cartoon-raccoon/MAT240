@@ -1,0 +1,41 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q9)}
+
+\textit{(a)}
+The rotation on $P_{xy}$ is given as
+\[
+    T(x, y, z) = (x\cos\theta - y\sin\theta,
+    x\sin\theta + y\cos\theta, z)
+\]
+Since for any $v = (x, y, 0) \in P_{xy}$, $T(v)$ is still of the form
+$(x, y, 0)$, $T(P_{xy}) = P_{xy}$.
+
+Similarly, for any $(0, 0, z)$ on the $z$-axis, rotation gives the
+same form $(0, 0, z)$, this the line $(0, 0, z)$ is also T-invariant.
+
+\textit{(b)}
+Taking $T$ and splitting by parameter, we have
+\[
+    x(\cos\theta + \sin\theta + 0)+
+    y(-\sin\theta + \cos\theta + 0)+
+    z(0, 0, 1)
+\]
+which yields the matrix
+\[
+    \begin{bmatrix}
+        \cos\theta & -\sin\theta & 0 \\
+        \sin\theta &  \cos\theta & 0 \\
+             0     &       0     & 1
+    \end{bmatrix}
+\]
+\end{document}
