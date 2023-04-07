@@ -1,0 +1,70 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q1)}
+\begin{theorem}
+    If a matrix $A \in \mathcal{M}_{n \times n}$ has a zero row, then
+    $\det A = 0$.
+\end{theorem}
+\begin{proof}
+    We prove this by induction on $n$.
+
+    First we consider $n = 1$. We then have a matrix $A = (0)$, whose
+    determinant is clearly 0.
+
+    We then consider $n = 2$. We construct a matrix
+    \[
+        A = \begin{pmatrix}
+            0 & 0 \\
+            a & b
+        \end{pmatrix}
+    \]
+    $\det A$ is then $0b - 0a = 0$.
+
+    We then assume $\det A$ for $A \in \mathcal{M}_{n \times n}$ is 0, and
+    prove this also holds for the $n + 1$ case.
+
+    The determinant of $A \in \mathcal{M}_{n + 1 \times n + 1}$ is given by:
+    \[
+        \sum_{j = 1}^{n + 1} (-1)^{1 + j} A_{1j} \det (\tilde{A}_{1j})
+    \]
+
+    We observe that $\det (\tilde{A}_{1j})$ is the determinant of an $n \times n$
+    matrix, so it will be 0 if it has a zero row.
+
+    We now consider two possibilities:
+
+    \textit{Case 1:} The zero row of the matrix is the top row.
+
+    In this case, the term $A_{1j}$ will always be 0.
+    The determinant will then evaluate to:
+
+    \begin{align*}
+        & \sum_{j = 1}^{n + 1} (-1)^{1 + j} A_{1j} \det (\tilde{A}_{1j})\\
+        & = \sum_{j = 1}^{n + 1} (-1)^{1 + j} 0 \det (\tilde{A}_{1j})\\
+        & = 0
+    \end{align*}
+
+    \textit{Case 2:} The zero row of the matrix is from row 2 onwards.
+
+    In this case, the matrix $\tilde{A}_{1j} \in \mathcal{M}_{n \times n}$ 
+    will have a zero row,
+    so $\det \tilde{A}_{1j} = 0$.
+
+    Then $\det A$ evaluates to:
+
+    \begin{align*}
+        & \sum_{j = 1}^{n + 1} (-1)^{1 + j} A_{1j} \det (\tilde{A}_{1j})\\
+        & = \sum_{j = 1}^{n + 1} (-1)^{1 + j} A_{1j} 0\\
+        & = 0
+    \end{align*}
+\end{proof}
+\end{document}

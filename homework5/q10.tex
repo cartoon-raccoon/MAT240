@@ -1,0 +1,78 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q10)}
+\begin{proof}
+    We prove this by induction on $n$.
+
+    First, we consider $n = 1$. This gives us a matrix $A = (a_{11})$, and
+    $C_A(x) = \det (xI_n - A) = x - a_{11}$, which has degree 1.
+
+    Next, we consider $n = 2$. This gives us a matrix
+    \[
+        A = \begin{pmatrix}
+            b_1 & b_2\\
+            b_3 & b_4
+        \end{pmatrix}
+    \]
+    We then calculate $C_A(x)$ as:
+    \[
+        \det \begin{pmatrix}
+            x - b_1 & -b_2\\
+            -b_3 & x - b_4
+        \end{pmatrix}
+        = (x - b_1)(x - b_4) + b_2b_3
+    \]
+    Which, after expansion, becomes a polynomial of degree 2.
+
+    Now, we assume a matrix $A \in \mathcal{M}_{n \times n}$ has a
+    $C_A(x)$ of degree $n$, and prove that this holds for $n + 1$.
+
+    We thus calculate $C_A(x)$ for some matrix
+    $A \in \mathcal{M}_{n + 1 \times n + 1}$. This is given by
+    $\det \left(xI_{n + 1} - A\right)$.
+
+    We observe that $xI_{n + 1} - A$ is given by
+    \[
+        \begin{pmatrix}
+            x - A_{11} & -A_{12} & -A_{13} & \ldots & -A_{1n}\\
+            -A_{21} & x - A_{22} & \ldots  & \ldots & \vdots\\
+            -A_{31} & \vdots & x - A_{33}  &        & \vdots\\
+            \vdots  &        &        & \ddots      & \vdots\\
+            -A_{n1} & \ldots & \ldots & \ldots  & x - A_{nn}
+        \end{pmatrix}
+    \]
+
+    So its determinant is given by
+    \[
+        \sum_{j = 1}^{n + 1} (-1)^{1 + j} (xI_{n + 1} - A)_{1j}
+        \det \left(xI_n - \tilde{A}_{1j}\right)
+    \]
+    Expanding this sum, we get:
+    \begin{align*}
+        (x - A_{11})\det\left(xI_n - \tilde{A}_{11}\right)
+        -\left[(-A_{12})\det\left(xI_n - \tilde{A}_{12}\right)\right]
+        + \ldots\\
+        + \left[(-A_{1(n + 1)})\det\left(xI_n - \tilde{A}_{1(n + 1)}\right)\right]
+    \end{align*}
+
+    We observe that $\det \left(xI_n - \tilde{A}_{1j}\right)$ is a polynomial
+    of degree $n$, since $xI_n - \tilde{A}_{1j} \in \mathcal{M}_{n \times n}$.
+    Thus, the first term in the sum expansion,
+    $(x - A_{11})\det\left(xI_n - \tilde{A}_{11}\right)$, is a polynomial
+    of degree $n + 1$, while every other term is a polynomial of degree $n$
+    multiplied by a scalar. Since the first term is not cancelled out,
+    the entire sum evaluates to a polynomial of degree $n + 1$.
+
+    Thus, $C_A(x)$ is a polynomial of degree $n + 1$ for
+    $A \in \mathcal{M}_{n+1\times n+1}$, and the induction hypothesis holds.
+\end{proof}
+\end{document}

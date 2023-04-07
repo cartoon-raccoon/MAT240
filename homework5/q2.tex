@@ -1,0 +1,121 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q2)}
+
+\textit{(a)}
+\begin{proof}
+    For $n = 1$, there is nothing to prove.
+
+    For $n = 2$, we have the matrix
+    \[
+        A = \begin{pmatrix}
+            a & b\\
+            a & b
+        \end{pmatrix}
+    \]
+    Then $\det A = ab - ab = 0$.
+    
+    For the induction step, we assume this holds for $n$, and prove
+    for $n + 1$.
+
+    Let $A \in \mathcal{M}_{n + 1 \times n + 1}$, and $A$ has two
+    identical rows. Using Part 2 of Theorem 2, we define $\det A$ as
+    \[
+        \sum_{j = 1}^{n + 1}(-1)^{i + j}A_{ij}
+        \det\left(\tilde{A}_{ij}\right)
+    \]
+    Where $i \in \{1, 2, \ldots, n\}$. We choose $i$ such that we are not
+    choosing one of the two identical rows.
+    Then $\tilde{A}_{ij} \in \mathcal{M}_{n \times n}$ and has two
+    identical rows, so $\det (\tilde{A}_{ij}) = 0$.
+
+    Expanding the summation for $\det A$, we then get:
+    \[
+        A_{i1}\det(\tilde{A}_{i1}) - A_{i2}\det(\tilde{A}_{i2}) + \ldots
+        A_{i(n + 1)}\det(\tilde{A}_{i(n+1)})
+    \]
+    Since $\det (\tilde{A}_{ij}) = 0$, each term in this sum is 0,
+    and thus the entire sum is 0.
+\end{proof}
+
+\newpage
+\textit{(b)}
+\begin{proof}
+    Let
+    \[
+        A = \begin{pmatrix}
+            a_1\\ \vdots\\
+            a_i\\ \vdots\\
+            a_j\\ \vdots\\
+            a_n
+        \end{pmatrix}, \quad
+        B = \begin{pmatrix}
+            a_1\\ \vdots\\
+            a_j\\ \vdots\\
+            a_i\\ \vdots\\
+            a_n
+        \end{pmatrix},
+    \]
+    By Theorem 57, we observe that
+    \begin{gather*}
+        \det C = \det \begin{pmatrix}
+            a_1\\ \vdots\\
+            a_i + a_j\\ \vdots\\
+            a_j + a_i\\ \vdots\\
+            a_n
+        \end{pmatrix} =
+        \det \begin{pmatrix}
+            a_1\\ \vdots\\
+            a_i\\ \vdots\\
+            a_j + a_i\\ \vdots\\
+            a_n
+        \end{pmatrix} +
+        \det \begin{pmatrix}
+            a_1\\ \vdots\\
+            a_j\\ \vdots\\
+            a_j + a_i\\ \vdots\\
+            a_n
+        \end{pmatrix}\\
+        = \det \begin{pmatrix}
+            a_1\\ \vdots\\
+            a_i\\ \vdots\\
+            a_j\\ \vdots\\
+            a_n
+        \end{pmatrix} +
+        \det \begin{pmatrix}
+            a_1\\ \vdots\\
+            a_i\\ \vdots\\
+            a_i\\ \vdots\\
+            a_n
+        \end{pmatrix} +
+        \det \begin{pmatrix}
+            a_1\\ \vdots\\
+            a_j\\ \vdots\\
+            a_i\\ \vdots\\
+            a_n
+        \end{pmatrix} +
+        \det \begin{pmatrix}
+            a_1\\ \vdots\\
+            a_j\\ \vdots\\
+            a_j\\ \vdots\\
+            a_n
+        \end{pmatrix}\\
+        = \det A + 0 + \det B + 0
+    \end{gather*}
+    Since $C$ has two identical rows, $a_i + a_j$ and $a_j + a_i$,
+    By Theorem 58 part 1, $\det C = \det A + \det B = 0$.
+    Thus, we can conclude
+    \[
+        \det A + \det B = 0 \implies \det A = - \det B
+    \]
+\end{proof}
+\end{document}

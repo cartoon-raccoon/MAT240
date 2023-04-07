@@ -1,0 +1,29 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q3)}
+\begin{proof}
+    The "column $j$" expansion of $\det A$ can be rewritten as:
+    \[
+        \sum_{j = 1}^n (-1)^{j + i} A_{ji} \det(\tilde{A}_{ji})
+    \]
+
+    We then use the fact that $\det A = \det A^t$.
+
+    The cofactor (row $i$)expansion of $\det A^t$ is given as:
+    \[
+        \sum_{j = 1}^{n} (-1)^{i + j} A^{t}_{ij} \det (\tilde{A^t}_{ij})
+        =
+        \sum_{j = 1}^{n} (-1)^{i + j} A_{ji} \det (\tilde{A}_{ji})
+    \]
+    by the definition of $A^t$.
+\end{proof}
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q11)}
+
+\textit{(a)} True.
+
+\begin{proof}
+    Let $A \sim B$. Then $A = PBP^{-1}$, where $P \in \mathcal{M}_{n \times n}$.
+    Then
+    \[
+        A^k = (PBP^{-1})^k = \underbrace{
+            (PBP^{-1})(PBP^{-1}) \ldots (PBP^{-1})
+        }_{k \text{ times}}
+    \]
+
+    Since between each occurrence of $B$, we have $P^{-1}P$, they cancel into $I_n$
+    which then disappears, leaving us with
+    \[
+        P\underbrace{BB \ldots B}_{k \text{ times}}P^{-1} = PB^kP^{-1}
+    \]
+    So $A^k = PB^kP^{-1} \iff A^k \sim B^k$.
+\end{proof}
+
+\textit{(b)} False.
+
+As a counterexample, let
+\[
+    A = \begin{pmatrix}
+        0 & 1\\
+        0 & 0
+    \end{pmatrix}\quad
+    B = \begin{pmatrix}
+        0 & 0\\
+        0 & 0
+    \end{pmatrix}
+\]
+$A^2 = B^2$, but $A$ and $B$ are clearly not similar.
+
+\textit{(c)} False.
+
+As a counterexample, let
+\[
+    A = \begin{pmatrix}
+        5 & 7\\
+        2 & 3
+    \end{pmatrix}\quad
+    B = \begin{pmatrix}
+        1 & 0\\
+        0 & 1
+    \end{pmatrix}
+\]
+$\det (AB) = 1$, but A and B are clearly not inverses of each other.
+\end{document}

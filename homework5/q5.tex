@@ -1,0 +1,44 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q5)}
+\begin{proof}
+    We prove this with induction on $n$.
+
+    For $n = 1$, there is nothing to prove.
+
+    For $n = 2$, let $A = \begin{pmatrix}a & b \\ 0 & c\end{pmatrix}$.
+    $\det A$ is then $ac - 0b = ac$.
+
+    For the inductive step, we assume this holds for an upper triangular
+    matrix $A \in \mathcal{M}_{n \times n}$ and prove for $n + 1$.
+
+    Let $A \in \mathcal{M}_{(n + 1) \times (n + 1)}$.
+    We expand $\det A$ with "row-$i$" expansion on row $n + 1$, the last row.
+
+    This gives us
+    \[
+        \det A = \sum_{j = 1}^{n + 1} (-1)^{(n + 1) + j}\det (\tilde{A}_{nj})
+    \]
+    Since every element in the last row is 0 except for element $A_{(n+1)(n+1)}$,
+    we can simplify this to:
+    \[
+        (-1)^{2(n + 1)} A_{(n + 1)(n + 1)} \det (\tilde{A}_{nn})
+        \quad\quad (1)
+    \]
+    Since $(-1)^{2n}$ is always positive, it disappears. We also observe
+    that $\tilde{A}_{nn}$ is an upper triangular matrix of $n \times n$,
+    so we can assume $\det (\tilde{A}_{nn})$ is a product of its diagonal
+    entries.
+    Since $A_{(n + 1)(n + 1)}$ is the last diagonal entry of $A$, by (1),
+    $\det A$ is also the product of its diagonal entries.
+\end{proof}
+\end{document}

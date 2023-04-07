@@ -1,0 +1,38 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q6)}
+\begin{proof}
+    We prove this by induction on the dimensions of $B$.
+    Let $B \in \mathcal{M}_{1 \times 1}$. Then we calculate
+    $\det M$ by cofactor expansion on row $n$, the bottommost
+    row of $M$.
+    \[
+        \det M = \sum_{j = 1}^n M_{nj} \det (\tilde{M}_{nj})
+    \]
+    Since every element on row $n$ is zero except for the last
+    element of row $n$ which is $B_{11}$, $\det M$ simplifies
+    to
+    \[
+        M_{nn} \det (\tilde{M}_{nn}) = B_{11} \det (\tilde{M}_{nn})
+    \]
+    We observe that $\tilde{M}_{nn} = A$, so the theorem holds
+    for the case $B \in \mathcal{M}_{1 \times 1}$.
+
+    We now assume the theorem holds for
+    $B \in \mathcal{M}_{1 \times 1}$, and prove it holds for $n + 1$.
+
+    We calculate $\det M$ as:
+    \[
+        \det M = \sum_{j = 1}^n M_{nj} \det (\tilde{M}_{nj})
+    \]
+\end{proof}
+\end{document}

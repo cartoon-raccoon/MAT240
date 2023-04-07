@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q9)}
+
+\textbf{False}. Consider the matrices
+\[
+    \begin{pmatrix}
+        2 & 5 & 1\\
+        0 & 3 & 4\\
+        0 & 0 & 1
+    \end{pmatrix}\quad\quad
+    \begin{pmatrix}
+        2 & 4 & 2\\
+        0 & 3 & 3\\
+        0 & 0 & 1
+    \end{pmatrix}
+\]
+
+From these two matrices we obtain:
+\[
+    AB = \begin{pmatrix}
+        4 & 23 & 20\\
+        0 & 9  & 13\\
+        0 & 0  & 1 
+    \end{pmatrix}\quad
+    BA = \begin{pmatrix}
+        4 & 22 & 20\\
+        0 & 9  & 15\\
+        0 & 0  & 1 
+    \end{pmatrix}
+\]
+$AB$ and $BA$ have the same eigenvalues but are clearly not equal.
+\end{document}

@@ -1,0 +1,178 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q8)}
+
+\textit{(a)} We find $C_A(x)$ by computing $\det(xI_n - A)$:
+\[
+    B = \begin{pmatrix}
+        x & 0 & 0 & 0\\
+        0 & x & 0 & 0\\
+        0 & 0 & x & 0\\
+        0 & 0 & 0 & x
+    \end{pmatrix} -
+    \begin{pmatrix}
+        1 & 0 & 1 & 1\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 3 & 2\\
+        0 & 0 &-1 & 0
+    \end{pmatrix} =
+    \begin{pmatrix}
+        x-1 & 0 &-1 &-1\\
+        0 & x-1 & 0 & 0\\
+        0 & 0 & x-3 &-2\\
+        0 & 0 & -1 & x
+    \end{pmatrix}
+\]
+\[
+    \det B = (x - 1)^2\left(x(x-3) + 2\right)
+    =(x - 1)^3(x - 2)
+\]
+Since $C_A(x)$ splits over $\R$, $A$ has eigenvalues 1 and 2.
+
+\textit{(b)} For each eigenvalue $\lambda$, we solve for is eigenspace
+$E_\lambda = N(\lambda I_n - A)$ and find a basis for $E_\lambda$.
+
+For $E_1$:
+\[
+    I_4 - A = \begin{pmatrix}
+        0 & 0 & -1 & -1\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 2 & 2\\
+        0 & 0 & 1 & 1
+    \end{pmatrix} \xrightarrow{RREF}
+    \begin{pmatrix}
+        0 & 0 & 1 & 1\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0
+    \end{pmatrix}
+\]
+Solving the general solution, we get the basis
+\[
+    \beta_{E_1} = \{
+        (1, 0, 0, 0),
+        (0, 1, 0, 0),
+        (0, 0, -1, 1)
+    \}
+\]
+
+We then do the same for $E_2$:
+\[
+    2I_4 - A = \begin{pmatrix}
+        1 & 0 & -1 & -1\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & -1 & -2\\
+        0 & 0 & 1 & 2
+    \end{pmatrix} \xrightarrow{RREF}
+    \begin{pmatrix}
+        1 & 0 & 0 & 1\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 2\\
+        0 & 0 & 0 & 0
+    \end{pmatrix}
+\]
+Solving the general solution, we get the basis
+\[
+    \beta_{E_2} = \{
+        (-1, 0, -2, 1)
+    \}
+\]
+
+\textit{(c)} The union $\beta_1 \cup \beta_2$ is given by:
+\[
+    \beta = \{
+        (1, 0, 0, 0),
+        (0, 1, 0, 0),
+        (0, 0, -1, 1)
+        (-1, 0, -2, 1)
+    \}
+\]
+$\beta$ spans $\R^4$, and is linearly independent. Thus, $\beta$
+is a basis for $\R^4$.
+
+\textit{(d)} Since $\R^4$ is a direct sum of the eigenspaces of $A$,
+$A$ is diagonalizable. To do so, we arrange the vectors of $\beta$
+to the columns of a matrix:
+\[
+    P = \begin{pmatrix}
+        1 & 0 & 0 & 1 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 &-1 &-2 \\
+        0 & 0 & 1 & 1
+    \end{pmatrix}
+\]
+
+\newpage
+We then solve for $P^{-1}$:
+\begin{gather*}
+    \left(\begin{array}{cccc|cccc}
+        1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 0 &-1 &-2 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 1 & 1 & 0 & 0 & 0 & 1
+    \end{array}\right) \xrightarrow{R3 \cdot -1}
+    \left(\begin{array}{cccc|cccc}
+        1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 2 & 0 & 0 &-1 & 0 \\
+        0 & 0 & 1 & 1 & 0 & 0 & 0 & 1
+    \end{array}\right) \\ \xrightarrow{R4 - R3}
+    \left(\begin{array}{cccc|cccc}
+        1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 2 & 0 & 0 &-1 & 0 \\
+        0 & 0 & 0 &-1 & 0 & 0 & 1 & 1
+    \end{array}\right) \xrightarrow{R4 \cdot -1}
+    \left(\begin{array}{cccc|cccc}
+        1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 2 & 0 & 0 &-1 & 0 \\
+        0 & 0 & 0 & 1 & 0 & 0 &-1 &-1
+    \end{array}\right) \\ \xrightarrow{R1 + R4, R3 - 2R4}
+    \left(\begin{array}{cccc|cccc}
+        1 & 0 & 0 & 0 & 1 & 0 &-1 &-1 \\
+        0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 & 0 & 1 & 2 \\
+        0 & 0 & 0 & 1 & 0 & 0 &-1 &-1
+    \end{array}\right)
+\end{gather*}
+We then solve for $D = P^{-1}AP$:
+\[
+    \begin{pmatrix}
+        1 & 0 &-1 &-1 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix} \cdot
+    \begin{pmatrix}
+        1 & 0 & 1 & 1\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 3 & 2\\
+        0 & 0 &-1 & 0
+    \end{pmatrix} \cdot
+    \begin{pmatrix}
+        1 & 0 & 0 & 1 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 &-1 &-2 \\
+        0 & 0 & 1 & 1
+    \end{pmatrix}
+\]
+Which yields the diagonal matrix
+\[
+    \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 2
+    \end{pmatrix}
+\]
+\end{document}

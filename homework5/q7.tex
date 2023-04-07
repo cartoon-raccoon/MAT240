@@ -1,0 +1,116 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{preamble}
+
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\im}{\operatorname{im}}
+
+\begin{document}
+\textbf{(Q7)}
+
+1. If $A$ has a column of zeroes, then $\det A = 0$.
+\begin{proof}
+    Let $A$ have a column $a_i$ where $a_{1i} = a_{2i} = \ldots a_{ni}= 0$.
+    Then $A^t$ has $a_{i1} = a_{i2} = \ldots a_{in}= 0$, i.e a row
+    of zeroes, so $\det A^t = 0$ by Theorem 58 Part 1.
+
+    So $\det A^t = \det A = 0$.
+\end{proof}
+
+2. For any $i \in \{1,\ldots,n\}$, we have
+\[
+    \det A = \sum_{i = 1}^{n} (-1)^{i + j} A_{ij} \det (\tilde{A}_{ij})
+\]
+\begin{proof}
+    The proof for this follows from Q3.
+\end{proof}
+
+3. If $A$ has two identical columns, then $\det A = 0$.
+\begin{proof}
+    Let the columns of $A$ be given by
+    \[
+        \begin{pmatrix}
+            a_1 & \dots & a_i & \dots & a_i \dots & a_n
+        \end{pmatrix}
+    \]
+    Then for $A^t$, Each row is given by
+    \[
+        [A^t]_{ij} = A_{ji}
+    \]
+    So $A^t$ has two identical rows. Thus
+    \[
+        \det (A^t) = \det A = 0
+    \]
+\end{proof}
+
+4. If $B$ is obtained from $A$ by swapping two columns, then
+$\det B = -\det A$.
+\begin{proof}
+    Let $A = \left(a_{n1}, \dots, a_{ni}, \dots a_{nj}, \dots, a_{nn}\right)$,
+    and $B = \left(a_{n1}, \dots, a_{nj}, \dots a_{ni}, \dots, a_{nn}\right)$
+
+    Then for each element in $A^t$ and $B^t$:
+    \[
+        [A^t]_{ij} = A_{ji}, [A^t]_{ij} = B_{ji}
+    \]
+    So now $B^t$ is obtained from $A^t$ by swapping two rows.
+    $\det A^t = - \det B^t$ by Q2(b).
+
+    Then 
+    \[
+        \det A^t = -\det B^t = -\det B = \det A
+    \]
+\end{proof}
+
+5. If $B$ is obtained from $A$ by scaling column $i$ by $c \in \F$, then
+$\det B = a \det A$.
+\begin{proof}
+    Let $B = \left(a_{n1}, \dots ca_{ni}, \dots, a_{nn}\right)$.
+    Then $[B^t]_{ij} = B_{ji}$, and $[A^t]_{ij} = A_{ji}$,
+    So $B^t$ is obtained from $A^t$ by scaling row $i$ of $A^t$
+    by $c$.
+
+    Then
+    \[
+        \det B^t = c \det A^t = c \det A = \det B
+    \]
+\end{proof}
+
+\newpage
+6. If $B$ is obtained from $A$ by adding a multiple of one column to another,
+then $\det B = \det A$.
+\begin{proof}
+    Let 
+    \[
+        A = \left(a_{n1}, \dots, a_{ni}, \dots a_{nj}, \dots, a_{nn}\right)
+    \]
+    and
+    \[
+        B = \left(a_{n1}, \dots, a_{ni} + a_{nj}, \dots, a_{nj}, \dots, a_{nn}\right)
+    \]
+
+    Then
+    \[
+        A^t = \begin{pmatrix}
+            a_{1n}\\ \vdots\\
+            a_{in}\\ \vdots\\
+            a_{jn}\\ \vdots\\
+            a_{nn}
+        \end{pmatrix}
+        \quad
+        B^t = \begin{pmatrix}
+            a_{1n}\\ \vdots\\
+            a_{in} + a_{jn}\\ \vdots\\
+            a_{jn}\\ \vdots\\
+            a_{nn}
+        \end{pmatrix}
+    \]
+    Then
+    \[
+        \det A^t = \det B^t = \det A = \det B
+    \]
+\end{proof}
+\end{document}
